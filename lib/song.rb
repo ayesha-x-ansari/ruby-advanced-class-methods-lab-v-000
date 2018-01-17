@@ -62,6 +62,7 @@ class Song
     song = self.new # This is an important line.
     song. artist_name = artist_name
     song.name = name
+    puts song.name
     song.save
   end
 
@@ -69,4 +70,6 @@ class Song
     self.all.clear
   end
 end
+from_file  = "Thundercat - For Love I Come.mp3"
 Song.create
+Song.create_from_filename
