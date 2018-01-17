@@ -72,4 +72,4 @@ class Song
 end
 from_file  = "Thundercat - For Love I Come.mp3"
 Song.create
-Song.create_from_filename
+Song.create_from_filename(from_file)
