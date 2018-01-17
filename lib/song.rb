@@ -46,7 +46,8 @@ class Song
   def self.new_from_filename(from_file)
     data = from_file.split(" - ")
     artist_name = data[0]
-    name = data[1]
+    name = data[1].gsub(".mp3", "")
+
     song = self.new # This is an important line.
     song. artist_name = artist_name
     song.name = name
@@ -54,7 +55,9 @@ class Song
     song
   end
 
-  def create_from_filename(from_file)
+  def self.create_from_filename(from_file)
+    if self.find_by_name(name)
+    else
     data = from_file.split(" - ")
     artist_name = data[0]
     name = data[1]
@@ -63,6 +66,7 @@ class Song
     song.name = name
     song.save
     song
+  end
   end
 
   def self.destroy_all
