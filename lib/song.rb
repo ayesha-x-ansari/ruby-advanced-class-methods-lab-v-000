@@ -56,8 +56,6 @@ class Song
   end
 
   def self.create_from_filename(from_file)
-    if self.find_by_name(name)
-    else
     data = from_file.split(" - ")
     artist_name = data[0]
     name = data[1]
@@ -65,7 +63,7 @@ class Song
     song. artist_name = artist_name
     song.name = name
     song.save
-    song
+  
   end
   end
 
